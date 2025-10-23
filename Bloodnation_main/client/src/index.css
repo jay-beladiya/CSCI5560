@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+* {
+    user-select: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
+
+.scrollbar-hide-y {
+    overflow-y: scroll;
+    /* Ensure vertical scroll is active */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hide-y::-webkit-scrollbar:vertical {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.scrollbar-hide-x {
+    overflow-x: scroll;
+    /* Ensure horizontal scroll is active */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hide-x::-webkit-scrollbar:horizontal {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
