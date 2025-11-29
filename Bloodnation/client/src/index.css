@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+* {
+    user-select: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
+
+.scrollbar-hide-y {
+    overflow-y: scroll;
+    /* Ensure vertical scroll is active */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hide-y::-webkit-scrollbar:vertical {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.scrollbar-hide-x {
+    overflow-x: scroll;
+    /* Ensure horizontal scroll is active */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hide-x::-webkit-scrollbar:horizontal {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+:root{
+    /* Color palette */
+    --primary: #b91c1c; /* deep red */
+    --primary-100: #fecaca; /* light red */
+    --primary-600: #dc2626;
+    --secondary: #0b2545; /* deep navy for sidebars */
+    --muted: #6b7280;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --on-primary: #ffffff;
+    --shadow: 0 8px 24px rgba(11,37,69,0.06);
+    --success: #16a34a;
+}
+
+    .text-secondary { color: var(--secondary) !important; }
+    .bg-secondary { background-color: var(--secondary) !important; }
+
+/* Application background */
+.bg-app { background-color: var(--bg) !important; }
+
+/* Common utility classes (complement Tailwind) */
+.bg-primary { background-color: var(--primary) !important; }
+.text-primary { color: var(--primary) !important; }
+.text-on-primary { color: var(--on-primary) !important; }
+.bg-primary-100 { background-color: var(--primary-100) !important; }
+.border-primary { border-color: var(--primary) !important; }
+.sidebar-bg { background-color: var(--secondary) !important; }
+.card { background: var(--card); box-shadow: var(--shadow); border-radius: 0.75rem; }
+.btn-primary { background: var(--primary); color: var(--on-primary); padding: 0.5rem 0.75rem; border-radius: 0.5rem; transition: transform .18s ease, box-shadow .18s ease; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+.hover-bg-primary-100:hover { background-color: var(--primary-100) !important; }
+/* darker hover for primary (maps to original darker utility) */
+.hover-bg-primary-600:hover { background-color: var(--primary-600) !important; }
+
+/* success utilities */
+.bg-success-100 { background-color: rgba(22,163,74,0.12) !important; }
+.text-success { color: var(--success) !important; }
+
+/* button / card animation helpers */
+.btn-animate { transition: transform .18s ease, box-shadow .18s ease; }
+.btn-animate:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+.card-animate { transition: transform .22s ease, box-shadow .22s ease; }
+.card-animate:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(11,37,69,0.08); }
+.row-appear { animation: fadeInUp 420ms ease both; }
+
+/* Neutral text utility */
+.text-muted { color: var(--muted) !important; }
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+.fade-in { animation: fadeInUp 400ms ease-out both; }
+.float-slow { animation: float 3s ease-in-out infinite; }
+.slide-down { animation: fadeInUp 260ms cubic-bezier(.22,.9,.31,1) both; }
+
+/* Small responsive tweaks */
+@media (max-width: 640px){
+    .px-10 { padding-left: 1rem; padding-right: 1rem; }
+}
